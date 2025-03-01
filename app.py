@@ -22,6 +22,25 @@ def create_tables():
     conn.commit()
     conn.close()
 
+def add_total_income_column():
+    conn = sqlite3.connect('loan_prediction.db')
+    cursor = conn.cursor()
+
+    # Check if the 'total_income' column exists
+    cursor.execute("PRAGMA table_info(loan_predictions);")
+    columns = cursor.fetchall()
+
+    # If the column is missing, add it
+    if not any(column[1] == 'total_income' for column in columns):
+        cursor.execute("ALTER TABLE loan_predictions ADD COLUMN total_income FLOAT;")
+        conn.commit()
+        print("Column 'total_income' added to the table.")
+    else:
+        print("Column 'total_income' already exists.")
+
+    conn.close()
+
+
 # Route for home page
 @app.route('/')
 def home():
@@ -96,7 +115,7 @@ def predict():
     conn.close()
 
     # Render the result on the HTML page
-    return render_template('index.html', prediction_text=f'Loan Application is: {prediction}')
+    return render_template('predict.html', prediction_text=f'Loan Application is: {prediction}')
 
 # Route for handling contact form data
 @app.route('/submit_contact', methods=['POST'])
@@ -120,6 +139,7 @@ def submit_contact():
 
 # Initialize the tables when the app starts
 create_tables()
+add_total_income_column()
 
 if __name__ == '__main__':
     app.run(debug=True)

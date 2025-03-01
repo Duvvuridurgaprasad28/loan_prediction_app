@@ -9,3 +9,4 @@ matplotlib==3.5.1
 seaborn==0.11.2
 cython==0.29.33
 numpy
+Werkzeug==2.1.1

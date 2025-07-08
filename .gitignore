@@ -37,4 +37,4 @@ Thumbs.db
 node_modules/
 dist/
 build/
-package-lock.json
+package-lock.jsonmyenv/

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Prediction</title>
+    <!-- Add Bootstrap CSS from CDN -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">  <!-- Custom CSS -->
+
+    
+    <!-- Bootstrap JS (including Popper.js) -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('home') }}">← Back to Home</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="container">
+            <!-- Add an image at the top of the page -->
+            <div class="text-center mb-5">
+                <img src="{{ url_for('static', filename='image1.jpeg') }}" alt="Loan Prediction" class="img-fluid" style="max-width: 100%; height: auto;">
+            </div>
+        <h1 class="text-center my-5">Loan Prediction</h1>
+        <form action="/predict" method="POST" class="needs-validation" novalidate>
+            <!-- Use Bootstrap grid for aligning each label and input on the same line -->
+            <div class="form-row mb-4">
+                <div class="col-md-6">
+                    <label for="Married">Married (0 = No, 1 = Yes):</label>
+                </div>
+                <div class="col-md-6">
+                    <select id="Married" name="Married" class="form-control" required>
+                        <option value="" disabled selected>Select an option</option>
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row mb-4">
+                <div class="col-md-6">
+                    <label for="Dependents">Dependents (0 = None, 1 = One, 2 = Two, 3 = Three or more):</label>
+                </div>
+                <div class="col-md-6">
+                    <select id="Dependents" name="Dependents" class="form-control" required>
+                        <option value="" disabled selected>Select an option</option>
+                        <option value="0">None</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three or more</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row mb-4">
+                <div class="col-md-6">
+                    <label for="Education">Education (0 = Graduate, 1 = Not Graduate):</label>
+                </div>
+                <div class="col-md-6">
+                    <select id="Education" name="Education" class="form-control" required>
+                        <option value="" disabled selected>Select an option</option>
+                        <option value="0">Graduate</option>
+                        <option value="1">Not Graduate</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row mb-4">
+                <div class="col-md-6">
+                    <label for="ApplicantIncome">Applicant Income:</label>
+                </div>
+                <div class="col-md-6">
+                    <input type="number" id="ApplicantIncome" name="ApplicantIncome" class="form-control" required>
+                </div>
+            </div>
+            <div class="form-row mb-4">
+                <div class="col-md-6">
+                    <label for="CoapplicantIncome">Coapplicant Income:</label>
+                </div>
+                <div class="col-md-6">
+                    <input type="number" id="CoapplicantIncome" name="CoapplicantIncome" class="form-control" required>
+                </div>
+            </div>
+            <div class="form-row mb-4">
+                <div class="col-md-6">
+                    <label for="LoanAmount">Loan Amount:</label>
+                </div>
+                <div class="col-md-6">
+                    <input type="number" id="LoanAmount" name="LoanAmount" class="form-control" required>
+                </div>
+            </div>
+            <div class="form-row mb-4">
+                <div class="col-md-6">
+                    <label for="Loan_Amount_Term">Loan Term (months):</label>
+                </div>
+                <div class="col-md-6">
+                    <input type="number" id="Loan_Amount_Term" name="Loan_Amount_Term" class="form-control" min="12" max="600" required>
+                </div>
+            </div>
+            <div class="form-row mb-4">
+                <div class="col-md-6">
+                    <label for="Credit_History">Credit History (0.0 or 1.0):</label>
+                </div>
+                <div class="col-md-6">
+                    <select id="Credit_History" name="Credit_History" class="form-control" required>
+                        <option value="" disabled selected>Select an option</option>
+                        <option value="0.0">0.0</option>
+                        <option value="1.0">1.0</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row mb-4">
+                <div class="col-md-6">
+                    <label for="Gender_Male">Gender (0 = Female, 1 = Male):</label>
+                </div>
+                <div class="col-md-6">
+                    <select id="Gender_Male" name="Gender_Male" class="form-control" required>
+                        <option value="" disabled selected>Select an option</option>
+                        <option value="0">Female</option>
+                        <option value="1">Male</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row mb-4">
+                <div class="col-md-6">
+                    <label for="Self_Employed_Yes">Self Employed (0 = No, 1 = Yes):</label>
+                </div>
+                <div class="col-md-6">
+                    <select id="Self_Employed_Yes" name="Self_Employed_Yes" class="form-control" required>
+                        <option value="" disabled selected>Select an option</option>
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row mb-4">
+                <div class="col-md-6">
+                    <label for="Property_Area_Semiurban">Property Area (0 = No, 1 = Yes, Semiurban):</label>
+                </div>
+                <div class="col-md-6">
+                    <select id="Property_Area_Semiurban" name="Property_Area_Semiurban" class="form-control" required>
+                        <option value="" disabled selected>Select an option</option>
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row mb-4">
+                <div class="col-md-6">
+                    <label for="Property_Area_Urban">Property Area (0 = No, 1 = Yes, Urban):</label>
+                </div>
+                <div class="col-md-6">
+                    <select id="Property_Area_Urban" name="Property_Area_Urban" class="form-control" required>
+                        <option value="" disabled selected>Select an option</option>
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block">Predict</button>
+        </form>
+
+        {% if prediction_text %}
+        <h2 class="text-center mt-4">{{ prediction_text }}</h2>
+
+        <!-- Show different images based on the prediction -->
+        {% if 'Approved' in prediction_text %}
+        <div class="text-center mt-4">
+            <img src="{{ url_for('static', filename='la.webp') }}" alt="Loan Approved" class="img-fluid" style="max-width: 100%; height: auto;">
+        </div>
+        {% elif 'Rejected' in prediction_text %}
+        <div class="text-center mt-4">
+            <img src="{{ url_for('static', filename='loanrej.jpg') }}" alt="Loan Rejected" class="img-fluid" style="max-width: 100%; height: auto;">
+        </div>
+        {% endif %}
+        {% endif %}
+    </div>
+
+    <!-- Add Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

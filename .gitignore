@@ -1,0 +1,48 @@
+# 🚫 Ignore virtual environments
+myenv/
+env/
+venv/
+
+# 🐍 Python cache and compiled files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# 📓 Jupyter artifacts
+.ipynb_checkpoints/
+
+# 🔢 Model artifacts
+# Keep only the main .pkl used by the app
+*.pkl
+!random_forest_model.pkl
+
+# 🧮 SQLite database
+# Keep only the main DB used by the app
+*.db
+!loan_prediction.db
+
+# ⚙️ Environment variables or secrets
+.env
+*.env
+*.myenv
+
+# 🛠️ IDE/editor settings
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+
+# 🧪 Logs and setup artifacts
+*.log
+
+# 🌐 Optional - future frontend builds
+node_modules/
+dist/
+build/
+package-lock.json
+yarn.lock
+
+# ✅ Git filter-repo backups (just in case)
+.git-rewrite/

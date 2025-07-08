@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Predictor</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #e0f7fa; 
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+        }
+        
+        
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: stretch;
+            height: 100vh;
+            padding: 0 20px;
+            margin-top : 20px
+        }
+
+        .text-left {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            flex: 1;
+            max-width: 40%;
+            width: 100%; /* Adjust width as needed */
+            height: 85vh; 
+            background-color: rgba(102, 82, 82, 0.7);
+            padding: 20px;
+            transition: max-width 0.3s ease-in-out;
+            overflow-y: auto;
+            gap: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            z-index: 1;
+        }
+
+        .text-left p {
+            margin: 5px 0;
+            padding: 0;
+        }
+
+        .right-cover {
+            max-width: 90%; /* Increase the max-width */
+            max-height: 90vh; /* Set max-height to a portion of the viewport height */
+            object-fit: stretch;
+            width: 60%;
+            height: auto; /* Increased height */
+            position: relative;
+            padding: 20px;
+            border-radius: 10px;
+            z-index: 0; /* Ensure image is behind the text */
+            height: 100vh; /* Ensure the container takes up full height */
+            display: flex; /* Use flex to center the image */
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+            
+        }
+        
+        .prediction-button-container {
+            margin-top: 20px; /* Add margin to separate from the grey box */
+        }
+
+        .prediction-button {
+            align-self: flex-end;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .prediction-button:hover {
+            background-color: #45a049;
+        }
+
+        .fs-1 {
+            font-size: 1.75em;
+            font-weight: bold;
+        }
+
+        .fs-3 {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        .fs-4 {
+            font-size: 1.25em;
+            font-weight: bold;
+        }
+
+        .fs-5 {
+            font-size: 1em;
+        }
+    </style>
+</head>
+<body style="background-color: #fff3e0;">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">Loan Predictor</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/prediction">Prediction</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main content -->
+    <div class="container">
+        <div class="text-left">
+            <p class="fs-1 rounded">Loan Approval Prediction</p>
+            <p class="fs-5 rounded">using Machine Learning</p>
+            <p class="fs-4 rounded">Welcome to Loan Approval Predictor!</p>
+            <p class="fs-6 rounded">
+                Our Loan Approval Predictor is designed to assist individuals in determining the likelihood of their loan applications being approved. By leveraging advanced machine learning algorithms, our tool analyzes various factors such as credit history, income, employment status, and more to provide accurate predictions.
+            </p>
+            <p class="fs-6 rounded">
+                Whether you're a first-time applicant or looking to refinance, our easy-to-use tool offers insights to help you understand your approval chances. Make informed financial decisions and increase your chances of success with our reliable loan prediction service.
+            </p>
+            <div class="prediction-button prediction-button-container">
+                <a class="btn btn-primary" href="/prediction" role="button">Predict Now</a>
+            </div>
+        </div>
+
+        
+            <img src="{{ url_for('static', filename='image2.jpg') }}" alt="Cover Image" class="rounded float-end right-cover">
+    </div>
+
+    <!-- Bootstrap JS (including Popper.js) -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

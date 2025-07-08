@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Loan Prediction</title>
+    <!-- Add Bootstrap CSS from CDN -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">  <!-- Custom CSS -->
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="http://127.0.0.1:5000/">← Back to Home</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- Bootstrap JS (including Popper.js) -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container my-5">
+        <h1 class="text-center">About Loan Prediction</h1>
+        <div class="row mt-5">
+            <div class="col-md-6">
+                <h2>What is Loan Prediction?</h2>
+                <p>
+                    Loan prediction is an important process used by financial institutions to predict whether a loan application is likely to be approved or rejected. This system uses various factors, such as personal information, income, credit history, and property area to predict the chances of loan approval.
+                </p>
+                <p>
+                    Our Loan Prediction system uses advanced machine learning algorithms to analyze data provided by applicants and predict whether they will be approved for a loan. It helps financial institutions automate their decision-making process and improve the efficiency of their operations.
+                </p>
+            </div>
+            <div class="col-md-6">
+                <h2>How It Works</h2>
+                <p>
+                    The Loan Prediction system uses a set of parameters that are entered by the user in the form, such as:
+                </p>
+                <ul>
+                    <li>Marital status</li>
+                    <li>Dependents</li>
+                    <li>Education level</li>
+                    <li>Applicant and coapplicant income</li>
+                    <li>Loan amount</li>
+                    <li>Credit history</li>
+                    <li>Property area</li>
+                </ul>
+                <p>
+                    After entering this data, the system processes it using a trained machine learning model to make a prediction about whether the loan is likely to be approved or rejected.
+                </p>
+            </div>
+        </div>
+
+        <div class="mt-5">
+            <h2>Why Use Our Service?</h2>
+            <ul>
+                <li><strong>Efficiency:</strong> Automated loan decisioning saves time and effort for both the applicant and the lender.</li>
+                <li><strong>Accuracy:</strong> Our system uses a robust algorithm to make accurate predictions based on historical data.</li>
+                <li><strong>Data-Driven:</strong> Decisions are based on the data provided, ensuring fairer treatment of applicants.</li>
+            </ul>
+        </div>
+        
+        <div class="mt-5">
+            <h2>Contact Us</h2>
+            <p>
+                If you have any questions or feedback, feel free to reach out to us. You can contact us at <strong>support@loanprediction.com</strong>.
+            </p>
+        </div>
+    </div>
+
+    <!-- Add Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

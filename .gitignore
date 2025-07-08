@@ -1,0 +1,40 @@
+# 🚫 Virtual environments
+myenv/
+env/
+venv/
+
+# 🐍 Python cache and compiled files
+__pycache__/
+*.pyc
+
+# 📓 Jupyter artifacts
+.ipynb_checkpoints/
+
+# 🔢 Model artifacts
+# Keep the main model used for prediction
+*.pkl
+!random_forest_model.pkl
+
+# 🧮 Database files
+# Keep the SQLite DB because it's used by the app
+*.db
+!loan_prediction.db
+
+# ⚙️ Environment variables
+.myenv
+*.myenv
+
+# 🧪 Requirements and setup tracking
+*.log
+
+# 🛠️ IDE/editor settings
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# 🌐 Optional - if frontend or package builds are added later
+node_modules/
+dist/
+build/
+package-lock.json

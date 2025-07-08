@@ -1,0 +1,60 @@
+/* Add custom styling here */
+body {
+    background-color: #e0f7fa;  /* Light blue background */
+    font-family: 'Arial', sans-serif;
+}
+
+.container {
+    max-width: 800px;
+    margin-top: 50px;
+    background-color: #fff3e0;  /* Light yellow background */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #007bff;
+}
+
+h2 {
+    font-size: 1.5em;
+    color: #28a745;
+    font-weight: bold;
+}
+
+form .form-row {
+    margin-bottom: 20px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input {
+    font-size: 1.2em; /* Increase font size */
+    height: 2.5em; /* Increase input field height */
+    padding: 0.5em; /* Add padding for a more spacious look */
+}
+
+button {
+    font-size: 1.2em;
+    padding: 10px;
+}
+
+button:hover {
+    background-color: #28a745;  /* Green background on hover */
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+    h1 {
+        font-size: 2em;
+    }
+}
+
+

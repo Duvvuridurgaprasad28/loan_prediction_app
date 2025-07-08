@@ -21,8 +21,9 @@ __pycache__/
 !loan_prediction.db
 
 # ⚙️ Environment variables
-.myenv
-*.myenv
+.env
+.env.*
+*.env
 
 # 🧪 Requirements and setup tracking
 *.log
@@ -37,4 +38,4 @@ Thumbs.db
 node_modules/
 dist/
 build/
-package-lock.jsonmyenv/
+package-lock.json

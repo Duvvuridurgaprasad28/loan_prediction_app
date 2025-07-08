@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 ```markdown
+=======
+>>>>>>> origin/main
 # Loan Prediction Web Application
 
 This is a web application built using **Flask** that predicts whether a loan application will be **approved** or **rejected** based on user input. The model uses a **Random Forest** classifier trained on real-world features to predict loan approval status.

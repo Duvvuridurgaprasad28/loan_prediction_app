@@ -1,85 +1,47 @@
-<<<<<<< HEAD
-# 🚫 Virtual environments
-=======
-# 🚫 Ignore virtual environments
->>>>>>> origin/main
+# Ignore virtual environments
 myenv/
 env/
 venv/
 
-# 🐍 Python cache and compiled files
+# Python cache and compiled files
 __pycache__/
 *.pyc
-<<<<<<< HEAD
-=======
 *.pyo
 *.pyd
->>>>>>> origin/main
 
 # 📓 Jupyter artifacts
 .ipynb_checkpoints/
 
 # 🔢 Model artifacts
-<<<<<<< HEAD
-# Keep the main model used for prediction
 *.pkl
 !random_forest_model.pkl
 
 # 🧮 Database files
-# Keep the SQLite DB because it's used by the app
-*.db
-!loan_prediction.db
-
-# ⚙️ Environment variables
-.env
-.env.*
-*.env
-
-# 🧪 Requirements and setup tracking
-*.log
-=======
-# Keep only the main .pkl used by the app
-*.pkl
-!random_forest_model.pkl
-
-# 🧮 SQLite database
-# Keep only the main DB used by the app
 *.db
 !loan_prediction.db
 
 # ⚙️ Environment variables or secrets
 .env
+.env.*
 *.env
 *.myenv
->>>>>>> origin/main
-
-# 🛠️ IDE/editor settings
-.vscode/
-.idea/
-<<<<<<< HEAD
-.DS_Store
-Thumbs.db
-
-# 🌐 Optional - if frontend or package builds are added later
-=======
-*.swp
-.DS_Store
-Thumbs.db
 
 # 🧪 Logs and setup artifacts
 *.log
 
-# 🌐 Optional - future frontend builds
->>>>>>> origin/main
+# 🛠️ IDE/editor settings
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+
+# 🌐 Optional - frontend or package builds
 node_modules/
 dist/
 build/
 package-lock.json
-<<<<<<< HEAD
-myenv/
-=======
 yarn.lock
 
-# ✅ Git filter-repo backups (just in case)
+# ✅ Git filter-repo backups
 .git-rewrite/
->>>>>>> origin/main

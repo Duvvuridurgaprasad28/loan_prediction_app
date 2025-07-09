@@ -4,30 +4,33 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Loan Prediction</title>
-    <!-- Bootstrap 4 CSS -->
-    <link
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
+
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-light bg-light mb-4">
         <div class="container">
             <a href="{{ url_for('home') }}" class="btn btn-outline-primary">← Back to Home</a>
         </div>
     </nav>
 
+    <!-- Main Container -->
     <div class="container">
-        <h1 class="text-center mb-4">Loan Prediction</h1>
+        <h1 class="text-center mb-4">Loan Prediction Form</h1>
 
+        <!-- Form -->
         <form action="{{ url_for('predict') }}" method="POST" novalidate>
+
             <!-- Married -->
             <div class="form-group row">
-                <label for="Married" class="col-sm-6 col-form-label">Married (0 = No, 1 = Yes):</label>
+                <label class="col-sm-6 col-form-label">Married (0 = No, 1 = Yes):</label>
                 <div class="col-sm-6">
-                    <select id="Married" name="Married" class="form-control" required>
-                        <option value="" disabled selected>Select an option</option>
+                    <select name="Married" class="form-control" required>
+                        <option disabled selected>Select</option>
                         <option value="0">No</option>
                         <option value="1">Yes</option>
                     </select>
@@ -36,10 +39,10 @@
 
             <!-- Dependents -->
             <div class="form-group row">
-                <label for="Dependents" class="col-sm-6 col-form-label">Dependents (0=None,1=One,2=Two,3=Three+):</label>
+                <label class="col-sm-6 col-form-label">Dependents:</label>
                 <div class="col-sm-6">
-                    <select id="Dependents" name="Dependents" class="form-control" required>
-                        <option value="" disabled selected>Select an option</option>
+                    <select name="Dependents" class="form-control" required>
+                        <option disabled selected>Select</option>
                         <option value="0">None</option>
                         <option value="1">One</option>
                         <option value="2">Two</option>
@@ -50,10 +53,10 @@
 
             <!-- Education -->
             <div class="form-group row">
-                <label for="Education" class="col-sm-6 col-form-label">Education (0=Graduate,1=Not Graduate):</label>
+                <label class="col-sm-6 col-form-label">Education (0 = Graduate, 1 = Not Graduate):</label>
                 <div class="col-sm-6">
-                    <select id="Education" name="Education" class="form-control" required>
-                        <option value="" disabled selected>Select an option</option>
+                    <select name="Education" class="form-control" required>
+                        <option disabled selected>Select</option>
                         <option value="0">Graduate</option>
                         <option value="1">Not Graduate</option>
                     </select>
@@ -62,71 +65,42 @@
 
             <!-- Applicant Income -->
             <div class="form-group row">
-                <label for="ApplicantIncome" class="col-sm-6 col-form-label">Applicant Income:</label>
+                <label class="col-sm-6 col-form-label">Applicant Income:</label>
                 <div class="col-sm-6">
-                    <input
-                      type="number"
-                      id="ApplicantIncome"
-                      name="ApplicantIncome"
-                      class="form-control"
-                      required
-                      min="0"
-                    />
+                    <input type="number" name="ApplicantIncome" class="form-control" required min="0" />
                 </div>
             </div>
 
             <!-- Coapplicant Income -->
             <div class="form-group row">
-                <label for="CoapplicantIncome" class="col-sm-6 col-form-label">Coapplicant Income:</label>
+                <label class="col-sm-6 col-form-label">Coapplicant Income:</label>
                 <div class="col-sm-6">
-                    <input
-                      type="number"
-                      id="CoapplicantIncome"
-                      name="CoapplicantIncome"
-                      class="form-control"
-                      required
-                      min="0"
-                    />
+                    <input type="number" name="CoapplicantIncome" class="form-control" required min="0" />
                 </div>
             </div>
 
             <!-- Loan Amount -->
             <div class="form-group row">
-                <label for="LoanAmount" class="col-sm-6 col-form-label">Loan Amount:</label>
+                <label class="col-sm-6 col-form-label">Loan Amount:</label>
                 <div class="col-sm-6">
-                    <input
-                      type="number"
-                      id="LoanAmount"
-                      name="LoanAmount"
-                      class="form-control"
-                      required
-                      min="0"
-                    />
+                    <input type="number" name="LoanAmount" class="form-control" required min="0" />
                 </div>
             </div>
 
             <!-- Loan Term -->
             <div class="form-group row">
-                <label for="Loan_Amount_Term" class="col-sm-6 col-form-label">Loan Term (months):</label>
+                <label class="col-sm-6 col-form-label">Loan Term (months):</label>
                 <div class="col-sm-6">
-                    <input
-                      type="number"
-                      id="Loan_Amount_Term"
-                      name="Loan_Amount_Term"
-                      class="form-control"
-                      required
-                      min="12"
-                      max="600"
-                    />
+                    <input type="number" name="Loan_Amount_Term" class="form-control" required min="12" max="600" />
                 </div>
             </div>
 
             <!-- Credit History -->
             <div class="form-group row">
-                <label for="Credit_History" class="col-sm-6 col-form-label">Credit History (0.0 or 1.0):</label>
+                <label class="col-sm-6 col-form-label">Credit History (0.0 or 1.0):</label>
                 <div class="col-sm-6">
-                    <select id="Credit_History" name="Credit_History" class="form-control" required>
-                        <option value="" disabled selected>Select an option</option>
+                    <select name="Credit_History" class="form-control" required>
+                        <option disabled selected>Select</option>
                         <option value="0.0">0.0</option>
                         <option value="1.0">1.0</option>
                     </select>
@@ -135,10 +109,10 @@
 
             <!-- Gender -->
             <div class="form-group row">
-                <label for="Gender_Male" class="col-sm-6 col-form-label">Gender (0=Female,1=Male):</label>
+                <label class="col-sm-6 col-form-label">Gender (0 = Female, 1 = Male):</label>
                 <div class="col-sm-6">
-                    <select id="Gender_Male" name="Gender_Male" class="form-control" required>
-                        <option value="" disabled selected>Select an option</option>
+                    <select name="Gender_Male" class="form-control" required>
+                        <option disabled selected>Select</option>
                         <option value="0">Female</option>
                         <option value="1">Male</option>
                     </select>
@@ -147,10 +121,10 @@
 
             <!-- Self Employed -->
             <div class="form-group row">
-                <label for="Self_Employed_Yes" class="col-sm-6 col-form-label">Self Employed (0=No,1=Yes):</label>
+                <label class="col-sm-6 col-form-label">Self Employed (0 = No, 1 = Yes):</label>
                 <div class="col-sm-6">
-                    <select id="Self_Employed_Yes" name="Self_Employed_Yes" class="form-control" required>
-                        <option value="" disabled selected>Select an option</option>
+                    <select name="Self_Employed_Yes" class="form-control" required>
+                        <option disabled selected>Select</option>
                         <option value="0">No</option>
                         <option value="1">Yes</option>
                     </select>
@@ -159,10 +133,10 @@
 
             <!-- Property Area Semiurban -->
             <div class="form-group row">
-                <label for="Property_Area_Semiurban" class="col-sm-6 col-form-label">Property Area Semiurban (0=No,1=Yes):</label>
+                <label class="col-sm-6 col-form-label">Property Area - Semiurban (0 = No, 1 = Yes):</label>
                 <div class="col-sm-6">
-                    <select id="Property_Area_Semiurban" name="Property_Area_Semiurban" class="form-control" required>
-                        <option value="" disabled selected>Select an option</option>
+                    <select name="Property_Area_Semiurban" class="form-control" required>
+                        <option disabled selected>Select</option>
                         <option value="0">No</option>
                         <option value="1">Yes</option>
                     </select>
@@ -171,27 +145,28 @@
 
             <!-- Property Area Urban -->
             <div class="form-group row">
-                <label for="Property_Area_Urban" class="col-sm-6 col-form-label">Property Area Urban (0=No,1=Yes):</label>
+                <label class="col-sm-6 col-form-label">Property Area - Urban (0 = No, 1 = Yes):</label>
                 <div class="col-sm-6">
-                    <select id="Property_Area_Urban" name="Property_Area_Urban" class="form-control" required>
-                        <option value="" disabled selected>Select an option</option>
+                    <select name="Property_Area_Urban" class="form-control" required>
+                        <option disabled selected>Select</option>
                         <option value="0">No</option>
                         <option value="1">Yes</option>
                     </select>
                 </div>
             </div>
 
-            <button type="submit" class="btn btn-primary btn-block">Predict</button>
+            <!-- Submit -->
+            <button type="submit" class="btn btn-primary btn-block mt-3">Predict</button>
         </form>
 
+        <!-- Prediction Result -->
         {% if prediction_text %}
-        <div class="mt-4 text-center">
+        <div class="mt-5 text-center">
             <h3>{{ prediction_text }}</h3>
-
             {% if 'approved' in prediction_text|lower %}
-                <img src="{{ url_for('static', filename='la.webp') }}" alt="Loan Approved" class="img-fluid" style="max-width: 300px;"/>
+                <img src="{{ url_for('static', filename='la.webp') }}" alt="Loan Approved" class="img-fluid mt-3" style="max-width: 300px;" />
             {% elif 'rejected' in prediction_text|lower %}
-                <img src="{{ url_for('static', filename='loanrej.jpg') }}" alt="Loan Rejected" class="img-fluid" style="max-width: 300px;"/>
+                <img src="{{ url_for('static', filename='loanrej.jpg') }}" alt="Loan Rejected" class="img-fluid mt-3" style="max-width: 300px;" />
             {% endif %}
         </div>
         {% endif %}
